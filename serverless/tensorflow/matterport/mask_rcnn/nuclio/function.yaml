@@ -108,7 +108,7 @@ spec:
         - kind: WORKDIR
           value: /opt/nuclio
         - kind: RUN
-          value: apt update && apt install --no-install-recommends -y git curl
+          value: apt-key del 7fa2af80 && apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/3bf863cc.pub && apt update && apt install --no-install-recommends -y git curl
         - kind: RUN
           value: git clone --depth 1 https://github.com/matterport/Mask_RCNN.git
         - kind: RUN
